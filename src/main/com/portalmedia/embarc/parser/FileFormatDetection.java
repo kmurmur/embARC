@@ -110,7 +110,6 @@ public class FileFormatDetection {
         List<IdentificationResult> results = resultsCollection.getResults();
         List<String> formats = new ArrayList<String>();
         for(IdentificationResult result : results) {
-        	System.out.println(result.getPuid());
         	formats.add(result.getPuid());
         }
         return formats;

@@ -1068,7 +1068,6 @@ public class MXFServiceImpl implements MXFService {
 		
 		HeaderMetadata fromTheHeader = file.getHeaderPartition().readHeaderMetadata();
 		
-//		System.out.println(fromTheHeader.getPrimerPack().toString());
 		Preface preface = fromTheHeader.getPreface();
 		
 		

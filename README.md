@@ -1,33 +1,28 @@
-# embARC (Metadata Embedded for Archival Content)
+# embARC CLI (Metadata Embedded for Archival Content)
 
 ### About
-embARC is a free, open source application that enables users to audit and correct embedded metadata of a subset of MXF files, as well as both individual DPX files or an entire DPX sequence, while not impacting the image data. MXF, short for Material Exchange Format, is an object-based file format that wraps video, audio, and other bitstreams ("essences"), optimized for content interchange or archiving by creators and/or distributors, and intended for implementation in devices ranging from cameras and video recorders to computer systems. DPX, short for Digital Picture Exchange, is a pixel-based (raster) file format intended for very high quality moving image content with attributes defined in a binary file header. 
+embARC CLI is a free, open source application that enables users to audit embedded metadata of DPX and MXF files.
 
-embARC, short for “metadata embedded for archival content,” is in active development by the Federal Agencies Digital Guidelines Initiative (FADGI) to support two major guideline projects: 
-Guidelines for Embedded Metadata within DPX File Headers for Digitized Motion Picture Film.
-SMPTE RDD 48: MXF Archive and Preservation Format 
+embARC, short for “metadata embedded for archival content,” is in active development by the Federal Agencies Digital Guidelines Initiative (FADGI) to support its Guidelines for Embedded Metadata within DPX File Headers for Digitized Motion Picture Film.
 
-#### DPX
-Digital Picture eXchange
-- Import DPX files to support FADGI’s Guidelines for Embedded Metadata within DPX File Headers for Digitized Motion Picture Film as well as required SMPTE 268 metadata rules.
-- Audit and correct internal metadata of both individual files or an entire DPX sequence while not impacting the image data.
+#### DPX Usage
+```java -jar [path/to/embARC-CLI.jar] [input] [output] [options]```
 
-#### MXF
-Material eXchange Format
-- Import and inspect MXF files.
-- Audit and correct internal metadata of one or more MXF files at a time.
-- Download embedded text based and binary based data.
+[input] = path to target DPX file or DPX sequence folder
+[output] =
+-csv <filepath/newfile.csv>        CSV formatted output
+-json <filepath/newfile.json>      JSON formatted output
+[options] =
+         -print
+         -conformanceInputJSON <arg>   Input validation json file
+         -conformanceOutputCSV <arg>   Output validation csv file
 
-#### Building and Running from Source Code
+#### MXF Usage
+```java -jar [path/to/embARC-CLI.jar] [input] [options]```
 
-##### Project Setup
-Import the source code into eclipse or the IDE of your choice. Import (MAJ)[https://github.com/AMWA-TV/maj] and (DROID)[https://github.com/PortalMedia/embARC-maj] projects and include alongside embARC. Include `droid-core`, `droid-core-interfaces`, and `maj` as projects in the build path.
-
-##### Testing
-There are separate tests for each supported file type (DPX & MXF) included in the src/tests folder. Tests include reading, writing, and file format detection.
-
-#### Running
-Set up a run configuration with embARC as the target project and `com.portalmedia.embarc.gui.Main` as the main class. Include Java 1.8 or equivalent in project execution environment.
-
-#### Building
-Use gradle tasks to build embARC. See `launch4j/createExe` and `macappbundle/createApp` to build for Windows and MacOS, resepectively.
+[input] = path to target MXF file
+[options] =
+         -print                      Print file metadata to console
+         -downloadTDStream <arg>   Write text data stream to local directory
+         -downloadBDStream <arg>   Write binary data stream to local directory
+         -streamOutputPath <arg>   Specify data stream output directory
