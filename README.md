@@ -3,7 +3,9 @@
 ### About
 embARC CLI is a free, open source application that enables users to audit embedded metadata of DPX and MXF files.
 
-embARC, short for “metadata embedded for archival content,” is in active development by the Federal Agencies Digital Guidelines Initiative (FADGI) to support its Guidelines for Embedded Metadata within DPX File Headers for Digitized Motion Picture Film.
+embARC, short for “metadata embedded for archival content,” is in active development by the Federal Agencies Digital Guidelines Initiative (FADGI) to support two major guideline projects:
+- [Guidelines for Embedded Metadata within DPX File Headers for Digitized Motion Picture Film.](http://www.digitizationguidelines.gov/guidelines/digitize-DPXembedding.html)
+- [SMPTE RDD 48: MXF Archive and Preservation Format](http://www.digitizationguidelines.gov/guidelines/MXF_app_spec.html)
 
 #### DPX Usage
 ```java -jar [path/to/embARC-CLI.jar] [input] [output] [options]```
